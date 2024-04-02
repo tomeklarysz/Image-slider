@@ -3,7 +3,22 @@ const images = ['fruits.jpg', 'meat.jpg', 'pancakes.jpg', 'ramen.jpg', 'salad.jp
 const frame = document.getElementById('slideshow')
 const slide = document.createElement('img')
 slide.src = `media/${images[0]}`
+
+const pLeft = document.createElement('p')
+const pRight = document.createElement('p')
+const leftArrow = document.createElement('i')
+const rightArrow = document.createElement('i')
+leftArrow.classList.add('arrow')
+rightArrow.classList.add('arrow')
+leftArrow.classList.add('left')
+rightArrow.classList.add('right')
+
+pLeft.appendChild(leftArrow)
+pRight.appendChild(rightArrow)
+
+frame.appendChild(pLeft)
 frame.appendChild(slide)
+frame.appendChild(pRight)
 
 function changeImage () {
   let i = 1  
