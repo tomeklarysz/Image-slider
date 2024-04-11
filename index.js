@@ -31,7 +31,19 @@ function next () {
   slide.src = `media/${images[index]}`
 }
 
+function previous () {
+  start = slide.src.indexOf('media/')
+  src = slide.src.slice(start)
+  src = src.replace('media/', '')
+  index = images.indexOf(src)
+  if (index > 0) {
+    index--
+  }
+  slide.src = `media/${images[index]}`
+}
+
 rightArrow.addEventListener('click', next)
+leftArrow.addEventListener('click', previous)
 
 function changeImage () {
   let i = 1  
