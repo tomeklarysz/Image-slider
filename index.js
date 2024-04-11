@@ -20,6 +20,19 @@ frame.appendChild(pLeft)
 frame.appendChild(slide)
 frame.appendChild(pRight)
 
+function next () {
+  start = slide.src.indexOf('media/')
+  src = slide.src.slice(start)
+  src = src.replace('media/', '')
+  index = images.indexOf(src)
+  if (index < 4) {
+    index++
+  }
+  slide.src = `media/${images[index]}`
+}
+
+rightArrow.addEventListener('click', next)
+
 function changeImage () {
   let i = 1  
   setInterval(() => {
@@ -32,4 +45,4 @@ function changeImage () {
   }, 5000)
 }
 
-changeImage()
+// changeImage()
